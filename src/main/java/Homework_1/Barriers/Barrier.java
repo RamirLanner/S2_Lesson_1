@@ -1,4 +1,7 @@
 package Homework_1.Barriers;
+
+import Homework_1.Interfaces.JumpAndRunsPlayers;
+
 /*
 Абстрактный класс припятствий
 Данный класс определяет основные характеристики бующего объекта и его поведеия.
@@ -6,24 +9,24 @@ package Homework_1.Barriers;
 Но по заданию это не потребовалось
  */
 public abstract class Barrier {
-    protected final int BARRIER_DISTANCE;
+    protected final int barrierDistance;
 
-    public Barrier(int BARRIER_DISTANCE) {
-        this.BARRIER_DISTANCE = BARRIER_DISTANCE;
-    }
-
-    public boolean barrierPass(int power){
-        return power>=BARRIER_DISTANCE;
+    public Barrier(int barrierDistance) {
+        this.barrierDistance = barrierDistance;
     }
 
     @Override
     public String toString() {
         return "Barrier{" +
-                "BARRIER_DISTANCE=" + BARRIER_DISTANCE +
+                "BARRIER_DISTANCE=" + barrierDistance +
                 '}';
     }
 
     public void info(){
         System.out.println(this.toString());
     }
+
+    //логика прохождения препятствий ушла сюда
+    abstract public boolean barrierPass(JumpAndRunsPlayers player);
+
 }

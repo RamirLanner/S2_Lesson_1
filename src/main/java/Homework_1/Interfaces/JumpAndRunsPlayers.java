@@ -15,7 +15,8 @@ public interface JumpAndRunsPlayers extends Run,Jump {
         Поэтому разработчик должен обязательно реализовать метод для препятствий всех типов.
         для этого будет barrierAttack
      */
-    void barrierAttack(Barrier barrier);
     PlayerStatus getPlayerStatus();
+    void setPlayerStatus(PlayerStatus status);
     void info();
+
 }
